@@ -1,4 +1,4 @@
-﻿using DataLayer;
+﻿using BusinessLayer.Interfaces;
 using DataLayer.Model;
 using System;
 using System.Collections.Generic;
@@ -6,22 +6,27 @@ using System.Collections.Generic;
 namespace BusinessLayer
 {
 
+    //TODO remove it to data layer
     public static class visitTypes
     {
         public const int assessment = 0;
         public const int medication = 1;
         public const int bath = 2;
         public const int meal = 3;
-
     }
     public class HealthFacade
     {
-
-        private allData allData = new allData();
+        private readonly IStaffService _staffService;
+        
+        //public HealthFacade(IStaffService staffService)
+        //{
+        //    _staffService = staffService;
+        //}
 
         public Boolean addStaff(int id, string firstName, string surname, string address1, string address2, string category, double baseLocLat, double baseLocLon)
         {
-            NewStaff newStaff = new NewStaff{
+            Staff Staff = new Staff
+            {
                 id = id,
                 firstName = firstName,
                 surname = surname,
@@ -31,12 +36,13 @@ namespace BusinessLayer
                 baseLocLat = baseLocLat,
                 baseLocLon = baseLocLon
             };
-            return allData.addStaff(newStaff);
+            return _staffService.AddStaff(Staff);
         }
 
-        public List<NewStaff> getStaffList()
+        public List<Staff> getStaffList()
         {
-            return allData.Staff;
+            return _staffService.StaffList;
+                ;
         }
 
 
