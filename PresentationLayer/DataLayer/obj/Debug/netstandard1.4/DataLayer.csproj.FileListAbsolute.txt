@@ -7,3 +7,11 @@ C:\Users\lfernandez\Documents\Personal\xd\PresentationLayer\DataLayer\obj\Debug\
 C:\Users\lfernandez\Documents\Personal\xd\PresentationLayer\DataLayer\obj\Debug\netstandard1.4\DataLayer.AssemblyInfo.cs
 C:\Users\lfernandez\Documents\Personal\xd\PresentationLayer\DataLayer\obj\Debug\netstandard1.4\DataLayer.dll
 C:\Users\lfernandez\Documents\Personal\xd\PresentationLayer\DataLayer\obj\Debug\netstandard1.4\DataLayer.pdb
+C:\Users\Pilar\source\repos\Piro4\PresentationLayer\DataLayer\bin\Debug\netstandard1.4\DataLayer.deps.json
+C:\Users\Pilar\source\repos\Piro4\PresentationLayer\DataLayer\bin\Debug\netstandard1.4\DataLayer.dll
+C:\Users\Pilar\source\repos\Piro4\PresentationLayer\DataLayer\bin\Debug\netstandard1.4\DataLayer.pdb
+C:\Users\Pilar\source\repos\Piro4\PresentationLayer\DataLayer\obj\Debug\netstandard1.4\DataLayer.csprojResolveAssemblyReference.cache
+C:\Users\Pilar\source\repos\Piro4\PresentationLayer\DataLayer\obj\Debug\netstandard1.4\DataLayer.csproj.CoreCompileInputs.cache
+C:\Users\Pilar\source\repos\Piro4\PresentationLayer\DataLayer\obj\Debug\netstandard1.4\DataLayer.AssemblyInfo.cs
+C:\Users\Pilar\source\repos\Piro4\PresentationLayer\DataLayer\obj\Debug\netstandard1.4\DataLayer.dll
+C:\Users\Pilar\source\repos\Piro4\PresentationLayer\DataLayer\obj\Debug\netstandard1.4\DataLayer.pdb

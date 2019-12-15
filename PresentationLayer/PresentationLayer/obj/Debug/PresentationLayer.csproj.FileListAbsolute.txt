@@ -353,3 +353,11 @@ C:\Users\lfernandez\Documents\Personal\xd\PresentationLayer\PresentationLayer\ob
 C:\Users\lfernandez\Documents\Personal\xd\PresentationLayer\PresentationLayer\obj\Debug\PresentationLayer.csproj.GenerateResource.cache
 C:\Users\lfernandez\Documents\Personal\xd\PresentationLayer\PresentationLayer\obj\Debug\PresentationLayer.csproj.CoreCompileInputs.cache
 C:\Users\lfernandez\Documents\Personal\xd\PresentationLayer\PresentationLayer\obj\Debug\PresentationLayer.csproj.CopyComplete
+C:\Users\Pilar\source\repos\Piro4\PresentationLayer\PresentationLayer\obj\Debug\PresentationLayer.csprojResolveAssemblyReference.cache
+C:\Users\Pilar\source\repos\Piro4\PresentationLayer\PresentationLayer\obj\Debug\PresentationLayer.csproj.PresentationLayer.exe.config
+C:\Users\Pilar\source\repos\Piro4\PresentationLayer\PresentationLayer\obj\Debug\MainWindow.g.cs
+C:\Users\Pilar\source\repos\Piro4\PresentationLayer\PresentationLayer\obj\Debug\App.g.cs
+C:\Users\Pilar\source\repos\Piro4\PresentationLayer\PresentationLayer\obj\Debug\PresentationLayer_MarkupCompile.cache
+C:\Users\Pilar\source\repos\Piro4\PresentationLayer\PresentationLayer\obj\Debug\PresentationLayer_MarkupCompile.lref
+C:\Users\Pilar\source\repos\Piro4\PresentationLayer\PresentationLayer\obj\Debug\PresentationLayer.exe
+C:\Users\Pilar\source\repos\Piro4\PresentationLayer\PresentationLayer\obj\Debug\PresentationLayer.pdb
