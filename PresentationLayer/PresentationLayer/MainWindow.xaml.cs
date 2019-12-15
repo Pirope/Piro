@@ -1,5 +1,6 @@
 ﻿using BusinessLayer;
 using System;
+using System.IO;
 using System.Windows;
 //using DataLayer;
 
@@ -10,6 +11,7 @@ namespace PresentationLayer
     /// </summary>
     public partial class MainWindow : Window
     {
+        TextWriter tw = new StreamWriter(@"D:\test\data.txt", true);
         private HealthFacade healthSystem = new HealthFacade();
 
         public MainWindow()
@@ -31,15 +33,18 @@ namespace PresentationLayer
                 healthSystem.addStaff(8, "Jo", "Shaw", "21 Accia Road", "Edinburgh", "Care Worker", 55.932221, -3.214164);
                 dgv1.ItemsSource = healthSystem.getStaffList();
 
+                    tw.WriteLine("Staff:");
+                    foreach (var item in healthSystem.getStaffList())
+                    {                        
+                        tw.WriteLine($"{item.firstName} {item.surname} -- {item.address1} -- {item.address2} -- {item.category} -- {item.baseLocLat} -- {item.baseLocLon} \n");
+                    }
+                    tw.Close();
             }
             catch (Exception ex)
             {
-
                 throw;
             }
         }
-
-
 
         private void btnAddClients_Click(object sender, RoutedEventArgs e)
         {
@@ -49,10 +54,16 @@ namespace PresentationLayer
                 healthSystem.addClient(2, "Douglas", "Brown", "2 Mid Rd", "Edinburgh", 55.932317, -3.192716);
                healthSystem.addClient(3, "Jimmy", "Green", "31 High Rd", "Edinburgh", 55.942605, -3.180533);
                 dgv1.ItemsSource = healthSystem.getClientList();
+
+                    tw.WriteLine("Client(s):");
+                    foreach (var item in healthSystem.getClientList())
+                    {                       
+                        tw.WriteLine($"{item.firstName} {item.surname} -- {item.address1} -- {item.address2} -- {item.locLat} -- {item.locLon} \n");
+                    }
+                    tw.Close();
             }
             catch (Exception ex)
             {
-
                 throw;
             }
             //if (!healthSystem.addClient(1, "Claire", "Wentworth", "1 Low Rd", "Edinburgh", 55.937894, -3.194088))
@@ -123,7 +134,7 @@ namespace PresentationLayer
 
         private void btnClear_Click(object sender, RoutedEventArgs e)
         {
-            //healthSystem.clear();
+            dgv1.ItemsSource = null;
         }
 
         private void btnLoad_Click(object sender, RoutedEventArgs e)
