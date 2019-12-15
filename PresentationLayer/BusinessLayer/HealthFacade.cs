@@ -38,9 +38,7 @@ namespace BusinessLayer
         public List<Staff> getStaffList()
         {
             return Service.StaffList;
-        }
-
-       
+        }       
 
         public Boolean addClient(int id, string firstName, string surname, string address1, string address2, double locLat, double locLon)
         {

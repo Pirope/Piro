@@ -1,5 +1,7 @@
 ﻿using BusinessLayer;
+using DataLayer.Model;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Windows;
 //using DataLayer;
@@ -11,8 +13,10 @@ namespace PresentationLayer
     /// </summary>
     public partial class MainWindow : Window
     {
-        TextWriter tw = new StreamWriter(@"D:\test\data.txt", true);
+        
         private HealthFacade healthSystem = new HealthFacade();
+        private List<Staff> staffList;
+        private List<Client> clientList;
 
         public MainWindow()
         {
@@ -31,14 +35,8 @@ namespace PresentationLayer
                 healthSystem.addStaff(6, "Martha", "Rigg", "21 Accia Road", "Edinburgh", "Community Nurse", 55.932221, -3.214164);
                 healthSystem.addStaff(7, "Mike", "Heathcoat", "21 Accia Road", "Edinburgh", "Care Worker", 55.932221, -3.214164);
                 healthSystem.addStaff(8, "Jo", "Shaw", "21 Accia Road", "Edinburgh", "Care Worker", 55.932221, -3.214164);
-                dgv1.ItemsSource = healthSystem.getStaffList();
-
-                    tw.WriteLine("Staff:");
-                    foreach (var item in healthSystem.getStaffList())
-                    {                        
-                        tw.WriteLine($"{item.firstName} {item.surname} -- {item.address1} -- {item.address2} -- {item.category} -- {item.baseLocLat} -- {item.baseLocLon} \n");
-                    }
-                    tw.Close();
+                staffList = healthSystem.getStaffList();
+                dgv1.ItemsSource = staffList;
             }
             catch (Exception ex)
             {
@@ -53,14 +51,9 @@ namespace PresentationLayer
                healthSystem.addClient(1, "Claire", "Wentworth", "1 Low Rd", "Edinburgh", 55.937894, -3.194088);
                 healthSystem.addClient(2, "Douglas", "Brown", "2 Mid Rd", "Edinburgh", 55.932317, -3.192716);
                healthSystem.addClient(3, "Jimmy", "Green", "31 High Rd", "Edinburgh", 55.942605, -3.180533);
-                dgv1.ItemsSource = healthSystem.getClientList();
+                clientList = healthSystem.getClientList();
+                dgv1.ItemsSource = clientList;
 
-                    tw.WriteLine("Client(s):");
-                    foreach (var item in healthSystem.getClientList())
-                    {                       
-                        tw.WriteLine($"{item.firstName} {item.surname} -- {item.address1} -- {item.address2} -- {item.locLat} -- {item.locLon} \n");
-                    }
-                    tw.Close();
             }
             catch (Exception ex)
             {
@@ -135,6 +128,14 @@ namespace PresentationLayer
         private void btnClear_Click(object sender, RoutedEventArgs e)
         {
             dgv1.ItemsSource = null;
+            if (staffList != null)
+            {
+                staffList.Clear();
+            }
+            if (clientList != null)
+            {
+                clientList.Clear();
+            }
         }
 
         private void btnLoad_Click(object sender, RoutedEventArgs e)
@@ -148,7 +149,28 @@ namespace PresentationLayer
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            //healthSystem.save();
+            TextWriter tw = new StreamWriter(@"D:\test\data.txt", true);
+            if (staffList != null)
+            {
+                tw.WriteLine("Staff:");
+                foreach (var item in healthSystem.getStaffList())
+                {
+                    tw.WriteLine($"{item.firstName} {item.surname} -- {item.address1} -- {item.address2} -- {item.category} -- {item.baseLocLat} -- {item.baseLocLon} \n");
+                }
+                
+            }
+            if (clientList !=null)
+            {
+                tw.WriteLine("Client:");
+                foreach (var item in healthSystem.getStaffList())
+                {
+                    tw.WriteLine($"{item.firstName} {item.surname} -- {item.address1} -- {item.address2} -- {item.category} -- {item.baseLocLat} -- {item.baseLocLon} \n");
+                }
+                
+            }
+            tw.Close();
+
+
 
         }
     }
