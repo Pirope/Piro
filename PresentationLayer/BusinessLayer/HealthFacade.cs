@@ -39,14 +39,27 @@ namespace BusinessLayer
             return Service.StaffList;
         }
 
+       
 
-        //public Boolean addClient(int id, string firstName, string surname, string address1, string address2, double locLat, double locLon)
-        //{
-        //    NewClient newClient = new NewClient( id, firstName, surname, address1, address2, locLat, locLon);
-
-
-        //    return allData.newClientPerson(newClient);
-        //}
+        public Boolean addClient(int id, string firstName, string surname, string address1, string address2, double locLat, double locLon)
+        {
+            Client Client = new Client
+            {
+                id = id,
+                firstName = firstName,
+                surname = surname,
+                address1 = address1,
+                address2 = address2,
+                locLat = locLat,
+                locLon = locLon
+            };
+              
+            return Client(Client);
+        }
+        public List<Client> getClientList()
+        {
+            return ClientList;
+        }
 
         //public Boolean addVisit(int[] staff, int patient, int type, string dateTime)
         //{

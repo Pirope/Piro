@@ -42,29 +42,36 @@ namespace PresentationLayer
 
         private void btnAddClients_Click(object sender, RoutedEventArgs e)
         {
-            //txtOutput.Text = "";
+            try
+            {
+               healthSystem.addClient(1, "Claire", "Wentworth", "1 Low Rd", "Edinburgh", 55.937894, -3.194088);
+                healthSystem.addClient(2, "Douglas", "Brown", "2 Mid Rd", "Edinburgh", 55.932317, -3.192716);
+               healthSystem.addClient(3, "Jimmy", "Green", "31 High Rd", "Edinburgh", 55.942605, -3.180533);
+                dgv1.ItemsSource = healthSystem.getClientList();
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
             //if (!healthSystem.addClient(1, "Claire", "Wentworth", "1 Low Rd", "Edinburgh", 55.937894, -3.194088))
             //    txtOutput.Text += " Client member not added \n";
             //if (!healthSystem.addClient(2, "Douglas", "Brown", "2 Mid Rd", "Edinburgh", 55.932317, -3.192716))
             //    txtOutput.Text += " Client member not added \n";
-            //if (!healthSystem.addClient(3, "Jimmy", "Green", "31 High Rd", "Edinburgh", 55.942605, -3.180533))
-            //    txtOutput.Text += " Client member not added \n";
-
-            //txtOutput.Text += healthSystem.getClientList() + "\n";
         }
 
         private void BtnAddVisit_Click(object sender, RoutedEventArgs e)
         {
-            //    txtOutput.Text = "";
-            //    try
-            //    {
-            //        if (healthSystem.addVisit(new int[2] { 1, 3 }, 1, visitTypes.assessment, "01/01/2020 09:00")) //Should be OK
-            //            txtOutput.Text += "Visit 1 added.";
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        txtOutput.Text += ex.Message;
-            //    }
+                txtOutput.Text = "";
+                try
+                {
+                    if (healthSystem.addVisit(new int[2] { 1, 3 }, 1, visitTypes.assessment, "01/01/2020 09:00")) //Should be OK
+                        txtOutput.Text += "Visit 1 added.";
+                }
+                catch (Exception ex)
+                {
+                    txtOutput.Text += ex.Message;
+               }
 
             //    try { 
             //    if (healthSystem.addVisit(new int[2] { 1, 3 }, 1, 999, "01/01/2020 09:00")) //Should fail as type not valid
