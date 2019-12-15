@@ -30,6 +30,7 @@ namespace PresentationLayer
                 healthSystem.addStaff(7, "Mike", "Heathcoat", "21 Accia Road", "Edinburgh", "Care Worker", 55.932221, -3.214164);
                 healthSystem.addStaff(8, "Jo", "Shaw", "21 Accia Road", "Edinburgh", "Care Worker", 55.932221, -3.214164);
                 dgv1.ItemsSource = healthSystem.getStaffList();
+
             }
             catch (Exception ex)
             {
@@ -62,16 +63,16 @@ namespace PresentationLayer
 
         private void BtnAddVisit_Click(object sender, RoutedEventArgs e)
         {
-                txtOutput.Text = "";
-                try
-                {
-                    if (healthSystem.addVisit(new int[2] { 1, 3 }, 1, visitTypes.assessment, "01/01/2020 09:00")) //Should be OK
-                        txtOutput.Text += "Visit 1 added.";
-                }
-                catch (Exception ex)
-                {
-                    txtOutput.Text += ex.Message;
-               }
+               // txtOutput.Text = "";
+               // try
+               // {
+               //     if (healthSystem.addVisit(new int[2] { 1, 3 }, 1, visitTypes.assessment, "01/01/2020 09:00")) //Should be OK
+               //         txtOutput.Text += "Visit 1 added.";
+               // }
+               // catch (Exception ex)
+               // {
+               //     txtOutput.Text += ex.Message;
+               //}
 
             //    try { 
             //    if (healthSystem.addVisit(new int[2] { 1, 3 }, 1, 999, "01/01/2020 09:00")) //Should fail as type not valid

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DataLayer.Model
 {
-    class TypeOfVisit
+    public class TypeOfVisit
     {
     }
 }

@@ -17,6 +17,7 @@ namespace BusinessLayer
     public class HealthFacade
     {
         StaffService Service = new StaffService();
+        ClientService ClientService = new ClientService();
 
         public Boolean addStaff(int id, string firstName, string surname, string address1, string address2, string category, double baseLocLat, double baseLocLon)
         {
@@ -43,7 +44,7 @@ namespace BusinessLayer
 
         public Boolean addClient(int id, string firstName, string surname, string address1, string address2, double locLat, double locLon)
         {
-            Client Client = new Client
+            Client client = new Client
             {
                 id = id,
                 firstName = firstName,
@@ -53,12 +54,12 @@ namespace BusinessLayer
                 locLat = locLat,
                 locLon = locLon
             };
-              
-            return Client(Client);
+
+            return ClientService.AddClient(client);
         }
         public List<Client> getClientList()
         {
-            return ClientList;
+            return ClientService.ClientList;  
         }
 
         //public Boolean addVisit(int[] staff, int patient, int type, string dateTime)
