@@ -1,6 +1,6 @@
 ﻿namespace DataLayer.Model
 {
-    public class NewStaff
+    public class Staff
     {
         public int id { get; set; }
         public string firstName { get; set; }

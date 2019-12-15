@@ -1,4 +1,4 @@
-﻿using BusinessLayer.Interfaces;
+﻿using BusinessLayer.Services;
 using DataLayer.Model;
 using System;
 using System.Collections.Generic;
@@ -16,12 +16,7 @@ namespace BusinessLayer
     }
     public class HealthFacade
     {
-        private readonly IStaffService _staffService;
-        
-        //public HealthFacade(IStaffService staffService)
-        //{
-        //    _staffService = staffService;
-        //}
+        StaffService Service = new StaffService();
 
         public Boolean addStaff(int id, string firstName, string surname, string address1, string address2, string category, double baseLocLat, double baseLocLon)
         {
@@ -36,13 +31,12 @@ namespace BusinessLayer
                 baseLocLat = baseLocLat,
                 baseLocLon = baseLocLon
             };
-            return _staffService.AddStaff(Staff);
+            return Service.AddStaff(Staff);
         }
 
         public List<Staff> getStaffList()
         {
-            return _staffService.StaffList;
-                ;
+            return Service.StaffList;
         }
 
 

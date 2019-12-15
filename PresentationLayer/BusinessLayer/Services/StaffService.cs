@@ -1,11 +1,9 @@
-﻿using BusinessLayer.Interfaces;
-using DataLayer.Model;
+﻿using DataLayer.Model;
 using System.Collections.Generic;
-using System.Text;
 
 namespace BusinessLayer.Services
 {
-    public class StaffService : IStaffService
+    public class StaffService
     {
         public List<Staff> StaffList { get; set; }
         public StaffService()
@@ -13,8 +11,7 @@ namespace BusinessLayer.Services
             StaffList = new List<Staff>();
         }
         public bool AddStaff(Staff newStaff)
-        {
-            
+        {            
             try
             {
                 StaffList.Add(newStaff);
